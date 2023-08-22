@@ -42,15 +42,14 @@ class ConnectOneBiometric extends Command
     public function handle()
     {
         $ping = (string)$this->argument('ping');
-        $biometrics = Biometric::where(['bio_ip'=>$ping])->first();
         try {
-            $process = new Process(['ping',$biometrics->bio_ip]);
+            $process = new Process(['ping',$ping]);
             $process->run();
             $output = $process->getOutput();
-            $biometrics->testBiometric();
-            $this->info($biometrics->bio_ip . ' is connected');
+            Biometric::testBiometric($ping);
+            $this->info($ping . ' can connect');
         } catch (\Throwable $th) {
-            $this->info($value->bio_ip . ' is not connected');
+            $this->info($ping . ' cannot connect');
         }
     }
 }

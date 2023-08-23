@@ -127,7 +127,6 @@ class Biometric extends Model
 
             $zk = Self::start($ip);
             $attendance = $zk->getAttendance();
-            dd($attendance);
             foreach ($attendance as $key => $value) {
                 $timestamp = Carbon::parse($value['timestamp']);
                 BioAttendance::firstOrCreate(

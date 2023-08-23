@@ -58,7 +58,7 @@ class Biometric extends Model
                 $ip = $this->bio_ip;
                 $proxy = $this->bio_proxy;
             }
-            $zk = new ZKTeco($ip,$proxy);
+            $zk = new ZKTeco($ip);
             $zk->connect();
             $zk->disableDevice();
             return $zk;
@@ -121,11 +121,13 @@ class Biometric extends Model
         return $zk->getUser();
     }
 
-    public function getAttendance()
+    public function getAttendance($ip = null)
     {
         try {
-            $zk = Self::start();
+
+            $zk = Self::start($ip);
             $attendance = $zk->getAttendance();
+            dd($attendance);
             foreach ($attendance as $key => $value) {
                 $timestamp = Carbon::parse($value['timestamp']);
                 BioAttendance::firstOrCreate(
@@ -143,7 +145,6 @@ class Biometric extends Model
                     ]
                 );
             }
-            
             return $attendance;
         } catch (\Throwable $th) {
             sendLogs('Models->Biometric->getAttendance',$th,'error');

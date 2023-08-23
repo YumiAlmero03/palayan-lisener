@@ -24,15 +24,16 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
 
-    Route::middleware(['auth'])->prefix('biometrics')->group(function () {
+    Route::prefix('biometrics')->group(function () {
         Route::get('','Biometrics\ApiController@index')->name('biometrics.index');
         Route::get('table','Biometrics\ApiController@getBiometric')->name('biometrics.table');
     });
     
-    Route::middleware(['auth'])->prefix('attendance')->group(function () {
+    Route::prefix('attendance')->group(function () {
         Route::get('','Attendance\ApiController@index')->name('biometrics.index');
-        Route::get('table','Attendance\ApiController@index')->name('biometrics.table');
+        Route::get('table/{ip}','Biometrics\AttendanceController@index')->name('biometrics.table');
     });
+    Route::get('test','Biometrics\ScheduleController@getBiometric')->name('test');
 
 });
 // schedule tester

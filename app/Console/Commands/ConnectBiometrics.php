@@ -51,6 +51,7 @@ class ConnectBiometrics extends Command
                 $this->info($value->bio_ip . ' is connected');
             } catch (\Throwable $th) {
                 $this->info($value->bio_ip . ' is not connected');
+                $this->info($th);
             }
             
         }

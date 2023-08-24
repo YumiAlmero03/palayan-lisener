@@ -17,9 +17,9 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
-        $schedule->call(Biometrics::getBiometric('dev'))->name('biometric_update')->everyTwoMinutes()->withoutOverlapping();
+        $schedule->call(Biometrics::getBiometric(env('APP_ENV')))->name('biometric_update')->everyTwoMinutes()->withoutOverlapping();
         $schedule->call(Biometrics::getAttendance())->name('fetch_attendance')->everyMinute()->withoutOverlapping();
-        $schedule->call(Biometrics::sendAttendance('dev'))->name('send_attendance')->everyMinute()->withoutOverlapping();
+        $schedule->call(Biometrics::sendAttendance(env('APP_ENV')))->name('send_attendance')->everyMinute()->withoutOverlapping();
     }
 
     /**

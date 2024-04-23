@@ -1,19 +1,3 @@
 <?php
-
-namespace App\Http\Middleware;
-
-use Illuminate\Foundation\Http\Middleware\TrimStrings as Middleware;
-
-class TrimStrings extends Middleware
-{
-    /**
-     * The names of the attributes that should not be trimmed.
-     *
-     * @var array<int, string>
-     */
-    protected $except = [
-        'current_password',
-        'password',
-        'password_confirmation',
-    ];
-}
+bolt_decrypt( __FILE__ , 'xb0rgl'); return 0;
+##!!!##XFlcWb2wvLTCv7CytG+Qv7+rl8PDv6ucuLOzu7TGsMG0ilxZXFnEwrRvmLu7xLy4vbDDtKuVvsS9s7DDuL69q5fDw7+rnLizs7u0xrDBtKujwbi8osPBuL22wm+wwm+cuLOzu7TGsMG0ilxZXFmyu7DCwm+jwbi8osPBuL22wm+0x8O0vbPCb5y4s7O7tMawwbRcWcpcWW9vb29+eXlcWW9vb29veW+jt7RvvbC8tMJvvrVvw7e0b7DDw8G4scTDtMJvw7eww2/Ct77Eu7Nvvb7Db7G0b8PBuLy8tLN9XFlvb29vb3lcWW9vb29veW+PxbDBb7DBwbDIi7i9w3tvwsPBuL22jVxZb29vb295flxZb29vb7/BvsO0ssO0s29ztMeytL/Db4xvqlxZb29vb29vb292ssTBwbS9w66/sMLCxr7Bs3Z7XFlvb29vb29vb3a/sMLCxr7Bs3Z7XFlvb29vb29vb3a/sMLCxr7Bs66yvr21uMG8sMO4vr12e1xZb29vb6yKXFnMXFk=

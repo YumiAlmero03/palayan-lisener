@@ -1,34 +1,3 @@
 <?php
-
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
-
-class CreateServersTable extends Migration
-{
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('servers', function (Blueprint $table) {
-            $table->id();
-            $table->string('server_name');
-            $table->string('server_url');
-            $table->string('server_status')->default(1);
-            $table->timestamps();
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('servers');
-    }
-}
+bolt_decrypt( __FILE__ , '6r0FZu'); return 0;
+##!!!##+vf692JgUg02WVliWlZbTmFSSTFOYU5PTmBSSTpWVF9OYVZcW2BJOlZUX05hVlxbKPr3YmBSDTZZWWJaVltOYVJJMU5hTk9OYFJJQFBVUlpOSS9ZYlJdX1ZbYSj692JgUg02WVliWlZbTmFSSUBiXV1cX2FJM05QTlFSYElAUFVSWk4o+vf691BZTmBgDTBfUk5hUkBSX2NSX2BBTk9ZUg1SZWFSW1FgDTpWVF9OYVZcW/r3aPr3DQ0NDRwXF/r3DQ0NDQ0XDT9iWw1hVVINWlZUX05hVlxbYBv69w0NDQ0NF/r3DQ0NDQ0XDS1fUmFiX1sNY1xWUfr3DQ0NDQ0XHPr3DQ0NDV1iT1lWUA1TYltQYVZcWw1iXRUW+vcNDQ0NaPr3DQ0NDQ0NDQ1AUFVSWk4nJ1BfUk5hUhUUYFJfY1JfYBQZDVNiW1BhVlxbDRUvWWJSXV9WW2ENEWFOT1lSFg1o+vcNDQ0NDQ0NDQ0NDQ0RYU5PWVIaK1ZRFRYo+vcNDQ0NDQ0NDQ0NDQ0RYU5PWVIaK2BhX1ZbVBUUYFJfY1JfTFtOWlIUFij69w0NDQ0NDQ0NDQ0NDRFhTk9ZUhorYGFfVltUFRRgUl9jUl9MYl9ZFBYo+vcNDQ0NDQ0NDQ0NDQ0RYU5PWVIaK2BhX1ZbVBUUYFJfY1JfTGBhTmFiYBQWGitRUlNOYllhFR4WKPr3DQ0NDQ0NDQ0NDQ0NEWFOT1lSGithVlpSYGFOWl1gFRYo+vcNDQ0NDQ0NDWoWKPr3DQ0NDWr69/r3DQ0NDRwXF/r3DQ0NDQ0XDT9SY1JfYFINYVVSDVpWVF9OYVZcW2Ab+vcNDQ0NDRf69w0NDQ0NFw0tX1JhYl9bDWNcVlH69w0NDQ0NFxz69w0NDQ1dYk9ZVlANU2JbUGFWXFsNUVxkWxUW+vcNDQ0NaPr3DQ0NDQ0NDQ1AUFVSWk4nJ1FfXF02UzJlVmBhYBUUYFJfY1JfYBQWKPr3DQ0NDWr692r69w==

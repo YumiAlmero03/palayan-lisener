@@ -1,17 +1,3 @@
 <?php
-
-namespace App\Http\Controllers\Biometrics;
-
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Biometric;
-
-class AttendanceController extends Controller
-{
-    public function index($ip)
-    {
-        $test = Biometric::listUser($ip,4370);
-        dd($test);
-        return 'Test';
-    }
-}
+bolt_decrypt( __FILE__ , 'j9Qa2f'); return 0;
+##!!!##+vf691tOWlJgXU5QUg0uXV1JNWFhXUkwXFthX1xZWVJfYEkvVlxaUmFfVlBgKPr3+vdiYFINLl1dSTVhYV1JMFxbYV9cWVlSX2BJMFxbYV9cWVlSXyj692JgUg02WVliWlZbTmFSSTVhYV1JP1JeYlJgYSj692JgUg0uXV1JOlxRUllgSS9WXFpSYV9WUCj69/r3UFlOYGANLmFhUltRTltQUjBcW2FfXFlZUl8NUmVhUltRYA0wXFthX1xZWVJf+vdo+vcNDQ0NXWJPWVZQDVNiW1BhVlxbDVZbUVJlFRFWXRb69w0NDQ1o+vcNDQ0NDQ0NDRFhUmBhDSoNL1ZcWlJhX1ZQJydZVmBhQmBSXxURVl0ZISAkHRYo+vcNDQ0NDQ0NDVFRFRFhUmBhFij69w0NDQ0NDQ0NX1JhYl9bDRRBUmBhFCj69w0NDQ1q+vdq+vc=

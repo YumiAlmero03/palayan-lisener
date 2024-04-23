@@ -1,30 +1,3 @@
 <?php
-
-namespace App\Http\Controllers\Auth;
-
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Foundation\Auth\ResetsPasswords;
-
-class ResetPasswordController extends Controller
-{
-    /*
-    |--------------------------------------------------------------------------
-    | Password Reset Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller is responsible for handling password reset requests
-    | and uses a simple trait to include this behavior. You're free to
-    | explore this trait and override any methods you wish to tweak.
-    |
-    */
-
-    use ResetsPasswords;
-
-    /**
-     * Where to redirect users after resetting their password.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
-}
+bolt_decrypt( __FILE__ , 'MCSOjB'); return 0;
+##!!!##6+jr6Ew/S0NRTj9BQ/4fTk46JlJSTjohTUxSUE1KSkNQUTofU1JGGevo6+hTUUP+H05OOiZSUk46IU1MUlBNSkpDUFE6IU1MUlBNSkpDUBnr6FNRQ/4fTk46LlBNVEdCQ1BROjBNU1JDMUNQVEdBQy5QTVRHQkNQGevoU1FD/idKSlNLR0w/UkM6JE1TTEI/UkdNTDofU1JGOjBDUUNSUS4/UVFVTVBCURnr6OvoQUo/UVH+MENRQ1IuP1FRVU1QQiFNTFJQTUpKQ1D+Q1ZSQ0xCUf4hTUxSUE1KSkNQ6+hZ6+j+/v7+DQjr6P7+/v5aCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwvr6P7+/v5a/i4/UVFVTVBC/jBDUUNS/iFNTFJQTUpKQ1Dr6P7+/v5aCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwvr6P7+/v5a6+j+/v7+Wv4yRkdR/kFNTFJQTUpKQ1D+R1H+UENRTk1MUUdASkP+RE1Q/kY/TEJKR0xF/k4/UVFVTVBC/lBDUUNS/lBDT1NDUVJR6+j+/v7+Wv4/TEL+U1FDUf4//lFHS05KQ/5SUD9HUv5STf5HTEFKU0JD/lJGR1H+QENGP1RHTVAM/jdNUwVQQ/5EUEND/lJN6+j+/v7+Wv5DVk5KTVBD/lJGR1H+UlA/R1L+P0xC/k1UQ1BQR0JD/j9MV/5LQ1JGTUJR/ldNU/5VR1FG/lJN/lJVQz9JDOvo/v7+/lrr6P7+/v4IDevo6+j+/v7+U1FD/jBDUUNSUS4/UVFVTVBCURnr6Ovo/v7+/g0ICOvo/v7+/v4I/jVGQ1BD/lJN/lBDQkdQQ0FS/lNRQ1BR/j9EUkNQ/lBDUUNSUkdMRf5SRkNHUP5OP1FRVU1QQgzr6P7+/v7+COvo/v7+/v4I/h5UP1D+UVJQR0xF6+j+/v7+/ggN6+j+/v7+TlBNUkNBUkNC/gJQQ0JHUENBUjJN/hv+ME1TUkMxQ1BUR0FDLlBNVEdCQ1AYGCYtKyMZ6+hb6+g=

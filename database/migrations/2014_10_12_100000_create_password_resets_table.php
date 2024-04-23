@@ -1,32 +1,3 @@
 <?php
-
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
-
-return new class extends Migration
-{
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('password_resets', function (Blueprint $table) {
-            $table->string('email')->index();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('password_resets');
-    }
-};
+bolt_decrypt( __FILE__ , '9bW67i'); return 0;
+##!!!##1dLV0j07LegRNDQ9NTE2KTwtJAwpPCkqKTstJBUxLzopPDE3NjskFTEvOik8MTc2A9XSPTst6BE0ND01MTYpPC0kDCk8KSopOy0kGyswLTUpJAo0PS04OjE2PAPV0j07LegRNDQ9NTE2KTwtJBs9ODg3OjwkDikrKSwtOyQbKzAtNSkD1dLV0jotPD06Nug2LT/oKzQpOzvoLUA8LTYsO+gVMS86KTwxNzbV0kPV0ujo6Oj38vLV0ujo6Ojo8ugaPTboPDAt6DUxLzopPDE3Njv21dLo6Ojo6PLV0ujo6Ojo8ugIOi08PTo26D43MSzV0ujo6Ojo8vfV0ujo6Og4PSo0MSvoLj02KzwxNzboPTjw8dXS6Ojo6EPV0ujo6Ojo6OjoGyswLTUpAgIrOi0pPC3w7zgpOzs/NzosJzotOy08O+/06C49Nis8MTc26PAKND0tODoxNjzo7DwpKjQt8ehD1dLo6Ojo6Ojo6Ojo6OjsPCkqNC31Bjs8OjE2L/DvLTUpMTTv8fUGMTYsLUDw8QPV0ujo6Ojo6Ojo6Ojo6Ow8KSo0LfUGOzw6MTYv8O88NzMtNu/xA9XS6Ojo6Ojo6Ojo6Ojo7DwpKjQt9QY8MTUtOzwpNTjw7ys6LSk8LSwnKTzv8fUGNj00NCkqNC3w8QPV0ujo6Ojo6OjoRfED1dLo6OjoRdXS1dLo6Ojo9/Ly1dLo6Ojo6PLoGi0+LTo7Leg8MC3oNTEvOik8MTc2O/bV0ujo6Ojo8tXS6Ojo6Ojy6Ag6LTw9OjboPjcxLNXS6Ojo6Ojy99XS6Ojo6Dg9KjQxK+guPTYrPDE3NugsNz828PHV0ujo6OhD1dLo6Ojo6Ojo6BsrMC01KQICLDo3OBEuDUAxOzw78O84KTs7Pzc6LCc6LTstPDvv8QPV0ujo6OhF1dJFA9XS

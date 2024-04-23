@@ -1,30 +1,3 @@
 <?php
-
-namespace App\Providers;
-
-use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Gate;
-
-class AuthServiceProvider extends ServiceProvider
-{
-    /**
-     * The policy mappings for the application.
-     *
-     * @var array<class-string, class-string>
-     */
-    protected $policies = [
-        // 'App\Models\Model' => 'App\Policies\ModelPolicy',
-    ];
-
-    /**
-     * Register any authentication / authorization services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        $this->registerPolicies();
-
-        //
-    }
-}
+bolt_decrypt( __FILE__ , 'sVDp8W'); return 0;
+##!!!##GRYZFnpteXF/fG1vcSxNfHxoXH57gnVwcX5/RxkWGRaBf3EsVXh4gXl1em2AcWhSe4F6cG2AdXt6aF+BfHx7foBoXH57gnVwcX5/aE2BgHRfcX6CdW9xXH57gnVwcX4sbX8sX3F+gnVvcVx+e4J1cHF+RxkWgX9xLFV4eIF5dXptgHFoX4F8fHt+gGhSbW9tcHF/aFNtgHFHGRYZFm94bX9/LE2BgHRfcX6CdW9xXH57gnVwcX4scYSAcXpwfyxfcX6CdW9xXH57gnVwcX4ZFocZFiwsLCw7NjYZFiwsLCwsNixgdHEsfHt4dW+FLHltfHx1enN/LHJ7fiyAdHEsbXx8eHVvbYB1e3o6GRYsLCwsLDYZFiwsLCwsNixMgm1+LG1+fm2FSG94bX9/OX+AfnV6czgsb3htf385f4B+dXpzShkWLCwsLCw2OxkWLCwsLHx+e4Bxb4BxcCwwfHt4dW91cX8sSSxnGRYsLCwsLCwsLDs7LDNNfHxoWXtwcXh/aFl7cHF4MyxJSiwzTXx8aFx7eHVvdXF/aFl7cHF4XHt4dW+FMzgZFiwsLCxpRxkWGRYsLCwsOzY2GRYsLCwsLDYsXnFzdX+AcX4sbXqFLG2BgHRxeoB1b22AdXt6LDssbYGAdHt+dYZtgHV7eix/cX6CdW9xfzoZFiwsLCwsNhkWLCwsLCw2LEx+cYCBfnosgnt1cBkWLCwsLCw2OxkWLCwsLHyBbnh1byxygXpvgHV7eixue3uANDUZFiwsLCyHGRYsLCwsLCwsLDCAdHV/OUp+cXN1f4Bxflx7eHVvdXF/NDVHGRYZFiwsLCwsLCwsOzsZFiwsLCyJGRaJGRY=

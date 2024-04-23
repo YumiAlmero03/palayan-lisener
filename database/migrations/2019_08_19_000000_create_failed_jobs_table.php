@@ -1,36 +1,3 @@
 <?php
-
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
-
-class CreateFailedJobsTable extends Migration
-{
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('failed_jobs', function (Blueprint $table) {
-            $table->id();
-            $table->string('uuid')->unique();
-            $table->text('connection');
-            $table->text('queue');
-            $table->longText('payload');
-            $table->longText('exception');
-            $table->timestamp('failed_at')->useCurrent();
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('failed_jobs');
-    }
-}
+bolt_decrypt( __FILE__ , 'TTFvKW'); return 0;
+##!!!##ExATEHt5ayZPcnJ7c290Z3prYkpnemdoZ3lrYlNvbXhnem91dHliU29teGd6b3V0QRMQe3lrJk9ycntzb3RnemtiSmd6Z2hneWtiWWlua3NnYkhye2t2eG90ekETEHt5ayZPcnJ7c290Z3prYll7dnZ1eHpiTGdpZ2preWJZaW5rc2dBExATEGlyZ3l5Jkl4a2d6a0xnb3JralB1aHlaZ2hyayZrfnprdGp5JlNvbXhnem91dBMQgRMQJiYmJjUwMBMQJiYmJiYwJlh7dCZ6bmsmc29teGd6b3V0eTQTECYmJiYmMBMQJiYmJiYwJkZ4a3p7eHQmfHVvahMQJiYmJiYwNRMQJiYmJnZ7aHJvaSZse3Rpem91dCZ7di4vExAmJiYmgRMQJiYmJiYmJiZZaW5rc2dAQGl4a2d6ay4tbGdvcmtqZXB1aHktMiZse3Rpem91dCYuSHJ7a3Z4b3R6Jip6Z2hyay8mgRMQJiYmJiYmJiYmJiYmKnpnaHJrM0Rvai4vQRMQJiYmJiYmJiYmJiYmKnpnaHJrM0R5enhvdG0uLXt7b2otLzNEe3Rvd3trLi9BExAmJiYmJiYmJiYmJiYqemdocmszRHprfnouLWl1dHRraXpvdXQtL0ETECYmJiYmJiYmJiYmJip6Z2hyazNEemt+ei4td3tre2stL0ETECYmJiYmJiYmJiYmJip6Z2hyazNEcnV0bVprfnouLXZnf3J1Z2otL0ETECYmJiYmJiYmJiYmJip6Z2hyazNEcnV0bVprfnouLWt+aWt2em91dC0vQRMQJiYmJiYmJiYmJiYmKnpnaHJrM0R6b3NreXpnc3YuLWxnb3JramVnei0vM0R7eWtJe3h4a3R6Li9BExAmJiYmJiYmJoMvQRMQJiYmJoMTEBMQJiYmJjUwMBMQJiYmJiYwJlhrfGt4eWsmem5rJnNvbXhnem91dHk0ExAmJiYmJjATECYmJiYmMCZGeGt6e3h0Jnx1b2oTECYmJiYmMDUTECYmJiZ2e2hyb2kmbHt0aXpvdXQmanV9dC4vExAmJiYmgRMQJiYmJiYmJiZZaW5rc2dAQGp4dXZPbEt+b3l6eS4tbGdvcmtqZXB1aHktL0ETECYmJiaDExCDExA=

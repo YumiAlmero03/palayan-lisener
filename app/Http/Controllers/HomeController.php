@@ -1,28 +1,3 @@
 <?php
-
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-class HomeController extends Controller
-{
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        return view('home');
-    }
-}
+bolt_decrypt( __FILE__ , 'cNfVUw'); return 0;
+##!!!##RkNGQ6eapp6sqZqcnll6qamVga2tqZV8qKetq6ilpZ6rrHRGQ0ZDrqyeWYKlpa6moqearZ6Vga2tqZWLnqqunqytdEZDRkOcpZqsrFmBqKaefKinrauopaWeq1mesa2ep52sWXyop62rqKWlnqtGQ7RGQ1lZWVloY2NGQ1lZWVlZY1l8q56arZ5ZmlmnnrBZnKinrauopaWeq1mip6ytmqecnmdGQ1lZWVlZY0ZDWVlZWVljWXmrnq2uq6dZr6iinUZDWVlZWVljaEZDWVlZWamum6WinFmfrqecraKop1mYmJyop6ytq66crWFiRkNZWVlZtEZDWVlZWVlZWVldraGirGZ3pqKdnaWesJqrnmFgmq6toWBidEZDWVlZWbZGQ0ZDWVlZWWhjY0ZDWVlZWVljWYyhqLBZraGeWZqpqaWinJqtoqinWZ2arKGbqJqrnWdGQ1lZWVlZY0ZDWVlZWVljWXmrnq2uq6dZlYKlpa6moqearZ6VfKinrauanK2slYyuqamoq62Vi56nnZ6rmpulnkZDWVlZWVljaEZDWVlZWamum6WinFmfrqecraKop1mip52esWFiRkNZWVlZtEZDWVlZWVlZWVmrnq2uq6dZr6KesGFgoaimnmBidEZDWVlZWbZGQ7ZGQw==

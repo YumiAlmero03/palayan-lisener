@@ -1,22 +1,3 @@
 <?php
-
-namespace App\Http\Controllers\Auth;
-
-use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
-
-class ForgotPasswordController extends Controller
-{
-    /*
-    |--------------------------------------------------------------------------
-    | Password Reset Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller is responsible for handling password reset emails and
-    | includes a trait which assists in sending these notifications from
-    | your application to your users. Feel free to explore this trait.
-    |
-    */
-
-    use SendsPasswordResetEmails;
-}
+bolt_decrypt( __FILE__ , 'x1t3nn'); return 0;
+##!!!##OTY5NpqNmZGfnI2PkUxtnJyIdKCgnIhvm5qgnpuYmJGen4htoaCUZzk2OTahn5FMbZyciHSgoJyIb5uaoJ6bmJiRnp+Ib5uaoJ6bmJiRnmc5NqGfkUx1mJihmZWajaCRiHKboZqQjaCVm5qIbaGglIh/kZqQn3yNn5+jm56QfpGfkaBxmY2VmJ9nOTY5No+YjZ+fTHKbnpOboHyNn5+jm56Qb5uaoJ6bmJiRnkyRpKCRmpCfTG+bmqCem5iYkZ45Nqc5NkxMTExbVjk2TExMTKhZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWTk2TExMTKhMfI2fn6ObnpBMfpGfkaBMb5uaoJ6bmJiRnjk2TExMTKhZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWTk2TExMTKg5NkxMTEyoTICUlZ9Mj5uaoJ6bmJiRnkyVn0yekZ+cm5qflY6YkUySm55MlI2akJiVmpNMnI2fn6ObnpBMnpGfkaBMkZmNlZifTI2akDk2TExMTKhMlZqPmKGQkZ9MjUygno2VoEyjlJWPlEyNn5+Vn6CfTJWaTJ+RmpCVmpNMoJSRn5FMmpuglZKVj42glZuan0ySnpuZOTZMTExMqEylm6GeTI2cnJiVj42glZuaTKCbTKWboZ5MoZ+Rnp9aTHKRkZhMkp6RkUygm0yRpJyYm56RTKCUlZ9MoJ6NlaBaOTZMTExMqDk2TExMTFZbOTY5NkxMTEyhn5FMf5GakJ98jZ+fo5uekH6Rn5GgcZmNlZifZzk2qTk2

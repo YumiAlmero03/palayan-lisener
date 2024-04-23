@@ -1,36 +1,3 @@
 <?php
-
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
-
-class CreatePersonalAccessTokensTable extends Migration
-{
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('personal_access_tokens', function (Blueprint $table) {
-            $table->id();
-            $table->morphs('tokenable');
-            $table->string('name');
-            $table->string('token', 64)->unique();
-            $table->text('abilities')->nullable();
-            $table->timestamp('last_used_at')->nullable();
-            $table->timestamps();
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('personal_access_tokens');
-    }
-}
+bolt_decrypt( __FILE__ , 'TNq1UF'); return 0;
+##!!!##7Ons6VRSRP8oS0tUTEhNQFNEOyNAU0BBQFJEOyxIRlFAU0hOTVI7LEhGUUBTSE5NGuzpVFJE/yhLS1RMSE1AU0Q7I0BTQEFAUkQ7MkJHRExAOyFLVERPUUhNUxrs6VRSRP8oS0tUTEhNQFNEOzJUT09OUVM7JUBCQENEUjsyQkdETEAa7Ons6UJLQFJS/yJRREBTRC9EUVJOTUBLIEJCRFJSM05KRE1SM0BBS0T/RFdTRE1DUv8sSEZRQFNITk3s6Vrs6f////8OCQns6f//////Cf8xVE3/U0dE/0xIRlFAU0hOTVIN7On//////wns6f//////Cf8fUURTVFFN/1VOSEPs6f//////CQ7s6f////9PVEFLSEL/RVRNQlNITk3/VE8HCOzp/////1rs6f//////////MkJHRExAGRlCUURAU0QHBk9EUVJOTUBLPkBCQkRSUj5TTkpETVIGC/9FVE1CU0hOTf8HIUtURE9RSE1T/wNTQEFLRAj/Wuzp////////////////A1NAQUtEDB1IQwcIGuzp////////////////A1NAQUtEDB1MTlFPR1IHBlNOSkRNQEFLRAYIGuzp////////////////A1NAQUtEDB1SU1FITUYHBk1ATEQGCBrs6f///////////////wNTQEFLRAwdUlNRSE1GBwZTTkpETQYL/xUTCAwdVE1IUFREBwga7On///////////////8DU0BBS0QMHVNEV1MHBkBBSEtIU0hEUgYIDB1NVEtLQEFLRAcIGuzp////////////////A1NAQUtEDB1TSExEUlNATE8HBktAUlM+VFJEQz5AUwYIDB1NVEtLQEFLRAcIGuzp////////////////A1NAQUtEDB1TSExEUlNATE9SBwga7On//////////1wIGuzp/////1zs6ezp/////w4JCezp//////8J/zFEVURRUkT/U0dE/0xIRlFAU0hOTVIN7On//////wns6f//////Cf8fUURTVFFN/1VOSEPs6f//////CQ7s6f////9PVEFLSEL/RVRNQlNITk3/Q05WTQcI7On/////Wuzp//////////8yQkdETEAZGUNRTk8oRSRXSFJTUgcGT0RRUk5NQEs+QEJCRFJSPlNOSkRNUgYIGuzp/////1zs6Vzs6Q==

@@ -1,12 +1,3 @@
 <?php
-
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
-class BioAttendance extends Model
-{
-    protected $guarded = ['id'];
-    public $table = 'hr_bio_attendance';
-}
+bolt_decrypt( __FILE__ , 'RgDJba'); return 0;
+##!!!##FxQXFHhrd299emttbypLenpmV3lub3Z9RRcUFxR/fW8qU3Z2f3dzeGt+b2ZOa35rbGt9b2ZPdnl7f294fmZQa21+eXxzb31mUmt9UGttfnl8g0UXFH99bypTdnZ/d3N4a35vZk5rfmtsa31vZk92eXt/b3h+Zld5bm92RRcUFxRtdmt9fSpMc3lLfn5veG5reG1vKm+Cfm94bn0qV3lub3YXFIUXFCoqKip6fHl+b21+b24qLnF/a3xub24qRyplMXNuMWdFFxQqKioqen9sdnNtKi5+a2x2bypHKjFyfGlsc3lpa35+b3hua3htbzFFFxSHFxQ=

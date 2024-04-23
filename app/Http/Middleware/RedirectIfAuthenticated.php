@@ -1,32 +1,3 @@
 <?php
-
-namespace App\Http\Middleware;
-
-use App\Providers\RouteServiceProvider;
-use Closure;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-
-class RedirectIfAuthenticated
-{
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
-     * @param  string|null  ...$guards
-     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
-     */
-    public function handle(Request $request, Closure $next, ...$guards)
-    {
-        $guards = empty($guards) ? [null] : $guards;
-
-        foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
-            }
-        }
-
-        return $next($request);
-    }
-}
+bolt_decrypt( __FILE__ , 'Kiz24Z'); return 0;
+##!!!##+/j7+FxPW1NhXk9RUw4vXl5KNmJiXko7V1JSWlNlT2BTKfv4+/hjYVMOL15eSj5gXWRXUlNgYUpAXWNiU0FTYGRXUVM+YF1kV1JTYCn7+GNhUw4xWl1hY2BTKfv4Y2FTDjdaWmNbV1xPYlNKNmJiXkpAU19jU2FiKfv4Y2FTDjdaWmNbV1xPYlNKQWNeXl1gYko0T1FPUlNhSi9jYlYp+/j7+FFaT2FhDkBTUldgU1FiN1QvY2JWU1xiV1FPYlNS+/hp+/gODg4OHRgY+/gODg4ODhgONk9cUlpTDk9cDldcUV1bV1xVDmBTX2NTYWIc+/gODg4ODhj7+A4ODg4OGA4uXk9gT1sODko3WlpjW1dcT2JTSjZiYl5KQFNfY1NhYg4OEmBTX2NTYWL7+A4ODg4OGA4uXk9gT1sODkoxWl1hY2BTFko3WlpjW1dcT2JTSjZiYl5KQFNfY1NhYhcoDhZKN1paY1tXXE9iU0o2YmJeSkBTYV5dXGFTako3WlpjW1dcT2JTSjZiYl5KQFNSV2BTUWJAU2FeXVxhUxcODhJcU2Zi+/gODg4ODhgOLl5PYE9bDg5hYmBXXFVqXGNaWg4OHBwcElVjT2BSYfv4Dg4ODg4YDi5gU2JjYFwOSjdaWmNbV1xPYlNKNmJiXkpAU2FeXVxhU2pKN1paY1tXXE9iU0o2YmJeSkBTUldgU1FiQFNhXl1cYVP7+A4ODg4OGB37+A4ODg5eY1BaV1EOVGNcUWJXXVwOVk9cUlpTFkBTX2NTYWIOEmBTX2NTYWIaDjFaXWFjYFMOElxTZmIaDhwcHBJVY09gUmEX+/gODg4Oafv4Dg4ODg4ODg4SVWNPYFJhDisOU1teYmcWElVjT2BSYRcOLQ5JXGNaWksOKA4SVWNPYFJhKfv4+/gODg4ODg4ODlRdYFNPUVYOFhJVY09gUmEOT2EOElVjT2BSFw5p+/gODg4ODg4ODg4ODg5XVA4WL2NiVigoVWNPYFIWElVjT2BSFxssUVZTUVkWFxcOafv4Dg4ODg4ODg4ODg4ODg4ODmBTYmNgXA5gU1JXYFNRYhZAXWNiU0FTYGRXUVM+YF1kV1JTYCgoNj07Mxcp+/gODg4ODg4ODg4ODg5r+/gODg4ODg4ODmv7+Pv4Dg4ODg4ODg5gU2JjYFwOElxTZmIWEmBTX2NTYWIXKfv4Dg4ODmv7+Gv7+A==

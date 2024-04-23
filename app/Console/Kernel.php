@@ -1,36 +1,3 @@
 <?php
-
-namespace App\Console;
-
-use Illuminate\Console\Scheduling\Schedule;
-use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use App\Http\Controllers\Biometrics\ScheduleController as Biometrics;
-
-class Kernel extends ConsoleKernel
-{
-    /**
-     * Define the application's command schedule.
-     *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
-     * @return void
-     */
-    protected function schedule(Schedule $schedule)
-    {
-        // $schedule->command('inspire')->hourly();
-        $schedule->call(Biometrics::getBiometric(env('APP_ENV')))->name('biometric_update')->everyTwoMinutes()->withoutOverlapping();
-        $schedule->call(Biometrics::getAttendance())->name('fetch_attendance')->everyMinute()->withoutOverlapping();
-        $schedule->call(Biometrics::sendAttendance(env('APP_ENV')))->name('send_attendance')->everyMinute()->withoutOverlapping();
-    }
-
-    /**
-     * Register the commands for the application.
-     *
-     * @return void
-     */
-    protected function commands()
-    {
-        $this->load(__DIR__.'/Commands');
-
-        require base_path('routes/console.php');
-    }
-}
+bolt_decrypt( __FILE__ , 'GKpG2z'); return 0;
+##!!!##Av8C/2NWYlpoZVZYWhU2ZWVROGRjaGRhWjAC/wL/amhaFT5hYWpiXmNWaVpROGRjaGRhWlFIWF1aWWphXmNcUUhYXVpZamFaMAL/amhaFT5hYWpiXmNWaVpRO2RqY1lWaV5kY1E4ZGNoZGFaUUBaZ2NaYRVWaBU4ZGNoZGFaQFpnY1phMAL/amhaFTZlZVE9aWllUThkY2lnZGFhWmdoUTdeZGJaaWdeWGhRSFhdWllqYVo4ZGNpZ2RhYVpnFVZoFTdeZGJaaWdeWGgwAv8C/1hhVmhoFUBaZ2NaYRVabWlaY1loFThkY2hkYVpAWmdjWmEC/3AC/xUVFRUkHx8C/xUVFRUVHxU5WlteY1oVaV1aFVZlZWFeWFZpXmRjHGgVWGRiYlZjWRVoWF1aWWphWiMC/xUVFRUVHwL/FRUVFRUfFTVlVmdWYhUVUT5hYWpiXmNWaVpROGRjaGRhWlFIWF1aWWphXmNcUUhYXVpZamFaFRUZaFhdWllqYVoC/xUVFRUVHxU1Z1ppamdjFWtkXlkC/xUVFRUVHyQC/xUVFRVlZ2RpWlhpWlkVW2pjWGleZGMVaFhdWllqYVodSFhdWllqYVoVGWhYXVpZamFaHgL/FRUVFXAC/xUVFRUVFRUVJCQVGWhYXVpZamFaIjNYZGJiVmNZHRxeY2hlXmdaHB4iM11kamdhbh0eMAL/FRUVFRUVFRUZaFhdWllqYVoiM1hWYWEdN15kYlppZ15YaC8vXFppN15kYlppZ15YHVpjax0cNkVFVDpDSxweHh4iM2NWYlodHFdeZGJaaWdeWFRqZVlWaVocHiIzWmtaZ25JbGRCXmNqaVpoHR4iM2xeaV1kamlEa1pnYVZlZV5jXB0eMAL/FRUVFRUVFRUZaFhdWllqYVoiM1hWYWEdN15kYlppZ15YaC8vXFppNmlpWmNZVmNYWh0eHiIzY1ZiWh0cW1ppWF1UVmlpWmNZVmNYWhweIjNaa1pnbkJeY2ppWh0eIjNsXmldZGppRGtaZ2FWZWVeY1wdHjAC/xUVFRUVFRUVGWhYXVpZamFaIjNYVmFhHTdeZGJaaWdeWGgvL2haY1k2aWlaY1lWY1haHVpjax0cNkVFVDpDSxweHh4iM2NWYlodHGhaY1lUVmlpWmNZVmNYWhweIjNaa1pnbkJeY2ppWh0eIjNsXmldZGppRGtaZ2FWZWVeY1wdHjAC/xUVFRVyAv8C/xUVFRUkHx8C/xUVFRUVHxVHWlxeaGlaZxVpXVoVWGRiYlZjWWgVW2RnFWldWhVWZWVhXlhWaV5kYyMC/xUVFRUVHwL/FRUVFRUfFTVnWmlqZ2MVa2ReWQL/FRUVFRUfJAL/FRUVFWVnZGlaWGlaWRVbamNYaV5kYxVYZGJiVmNZaB0eAv8VFRUVcAL/FRUVFRUVFRUZaV1eaCIzYWRWWR1UVDk+R1RUIxwkOGRiYlZjWWgcHjAC/wL/FRUVFRUVFRVnWmZqXmdaFVdWaFpUZVZpXR0cZ2RqaVpoJFhkY2hkYVojZV1lHB4wAv8VFRUVcgL/cgL/

@@ -1,36 +1,3 @@
 <?php
-
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
-
-class CreateUsersTable extends Migration
-{
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('users');
-    }
-}
+bolt_decrypt( __FILE__ , '8SRnXQ'); return 0;
+##!!!##Af4B/mlnWRQ9YGBpYV1iVWhZUDhVaFVWVWdZUEFdW2ZVaF1jYmdQQV1bZlVoXWNiLwH+aWdZFD1gYGlhXWJVaFlQOFVoVVZVZ1lQR1dcWWFVUDZgaVlkZl1iaC8B/mlnWRQ9YGBpYV1iVWhZUEdpZGRjZmhQOlVXVVhZZ1BHV1xZYVUvAf4B/ldgVWdnFDdmWVVoWUlnWWZnSFVWYFkUWWxoWWJYZxRBXVtmVWhdY2IB/m8B/hQUFBQjHh4B/hQUFBQUHhRGaWIUaFxZFGFdW2ZVaF1jYmciAf4UFBQUFB4B/hQUFBQUHhQ0ZlloaWZiFGpjXVgB/hQUFBQUHiMB/hQUFBRkaVZgXVcUWmliV2hdY2IUaWQcHQH+FBQUFG8B/hQUFBQUFBQUR1dcWWFVLi5XZllVaFkcG2lnWWZnGyAUWmliV2hdY2IUHDZgaVlkZl1iaBQYaFVWYFkdFG8B/hQUFBQUFBQUFBQUFBhoVVZgWSEyXVgcHS8B/hQUFBQUFBQUFBQUFBhoVVZgWSEyZ2hmXWJbHBtiVWFZGx0vAf4UFBQUFBQUFBQUFBQYaFVWYFkhMmdoZl1iWxwbWWFVXWAbHSEyaWJdZWlZHB0vAf4UFBQUFBQUFBQUFBQYaFVWYFkhMmhdYVlnaFVhZBwbWWFVXWBTallmXVpdWVhTVWgbHSEyYmlgYFVWYFkcHS8B/hQUFBQUFBQUFBQUFBhoVVZgWSEyZ2hmXWJbHBtkVWdna2NmWBsdLwH+FBQUFBQUFBQUFBQUGGhVVmBZITJmWWFZYVZZZkhjX1liHB0vAf4UFBQUFBQUFBQUFBQYaFVWYFkhMmhdYVlnaFVhZGccHS8B/hQUFBQUFBQUcR0vAf4UFBQUcQH+Af4UFBQUIx4eAf4UFBQUFB4URllqWWZnWRRoXFkUYV1bZlVoXWNiZyIB/hQUFBQUHgH+FBQUFBQeFDRmWWhpZmIUamNdWAH+FBQUFBQeIwH+FBQUFGRpVmBdVxRaaWJXaF1jYhRYY2tiHB0B/hQUFBRvAf4UFBQUFBQUFEdXXFlhVS4uWGZjZD1aOWxdZ2hnHBtpZ1lmZxsdLwH+FBQUFHEB/nEB/g==

@@ -39,4 +39,3 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 // schedule tester
 Route::get('test','Biometrics\ScheduleController@sendAttendance')->name('test');
 
-

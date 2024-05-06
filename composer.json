@@ -14,7 +14,8 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "rats/zkteco": "^002.0",
-        "symfony/process": "^5.4"
+        "symfony/process": "^5.4",
+        "sbamtr/laravel-source-encrypter": "^1.5"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -22,8 +23,7 @@
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^5.10",
-        "phpunit/phpunit": "^9.5.10",
-        "sbamtr/laravel-source-encrypter": "^1.5"
+        "phpunit/phpunit": "^9.5.10"
     },
     "autoload": {
         "files": [

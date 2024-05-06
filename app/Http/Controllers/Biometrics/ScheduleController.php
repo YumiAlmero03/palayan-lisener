@@ -100,6 +100,25 @@ class ScheduleController extends Controller
                 } else {
                     sendLogs('Controller->Biometric->sendAttendance',$status,'error','SchedulerLogs');
                 }
+
+                // foreach (serverStage($url) as $server) {
+                //     sendLogs('Controller->Biometric->sendAttendance',$server.'api/biometrics/recieveAttendance','error','SchedulerLogs');
+                //     $res = $client->request('POST', getServerUrl($server).'api/biometrics/recieveAttendance',[
+                //         'form_params' => [
+                //             'user_id' => $value->bio_uuid,
+                //             'date' => $value->hrba_date,
+                //             'time' => $value->hrba_time,
+                //             'password' => generateHashApi(),
+                //         ]
+                //     ]);
+                //     $status = $res->getBody()->getContents();
+                //     $apiMsg = json_decode($status);
+                //     // if ($apiMsg->status === 200) {
+                //     //     $value->update(['hrba_copy'=>1]);
+                //     // } else {
+                //     //     sendLogs('Controller->Biometric->sendAttendance',$status,'error','SchedulerLogs');
+                //     // }
+                // }
             }
 
             sendLogs('Controller->Biometric->sendAttendance','sendAttendance done','info','SchedulerLogs');

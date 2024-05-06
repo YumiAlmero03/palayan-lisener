@@ -161,10 +161,13 @@ class Biometric extends Model
         $process = new Process(['ping',$ip]);
         $process->run();
         $zk = Self::start($ip,$proxy);
-        $zk->testVoice();
-        $model = $zk->version(); 
-        return [
-            'model'=>$model
-        ];
+        if ($zk) {
+            $zk->testVoice();
+            $model = $zk->version(); 
+            return [
+                'model'=>$model
+            ];
+        }
+        return "error";
     }
 }

@@ -17,7 +17,7 @@ function serverStage($server)
 function getServerUrl($server)
 {
     $server = Server::where([['server_name',$server],['server_status',1]])->first();
-    return ($server) ? $server->server_url : '';
+    return $server;
 }
 
 function sendLogs($loc,$msg,$type = 'info',$file = 'throwLogs'){

@@ -1,3 +1,41 @@
 <?php
-bolt_decrypt( __FILE__ , 'TJm8YV'); return 0;
-##!!!##//z//GdlVxI7Xl5nX1tgU2ZXTkVnYmJhZGZOOFNVU1ZXZU5EYWdmVy3//GdlVxIzYmJOOmZmYk41YWBmZGFeXldkZS3//P/8IRz//G4fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fH//8bhJJV1QSRGFnZldl//xuHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx///G7//G4SOldkVxJbZRJpWldkVxJrYWcSVVNgEmRXWVtlZldkEmlXVBJkYWdmV2USWGFkEmthZ2QSU2JiXltVU2ZbYWAgEkZaV2VX//xuEmRhZ2ZXZRJTZFcSXmFTVldWElRrEmZaVxJEYWdmV0VXZGhbVVdCZGFoW1ZXZBJpW2ZaW2ASUxJZZGFnYhJpWltVWv/8bhJVYWBmU1tgZRJmWlcSFGlXVBQSX1tWVl5XaVNkVxJZZGFnYiASQGFpElVkV1NmVxJlYV9XZlpbYFkSWWRXU2YT//xu//wcIf/8//xEYWdmVywsWVdmGhkhGR4SWGdgVWZbYWASGhsSbf/8EhISEmRXZmdkYBJoW1dpGhlpV15VYV9XGRst//xvGy3//P/8M2dmWiwsZGFnZldlGhst//z//ERhZ2ZXLCxZV2YaGSFaYV9XGR4STTNiYk46ZmZiTjVhYGZkYV5eV2RlTjphX1c1YWBmZGFeXldkLCxVXlNlZR4SGVtgVldqGU8bHzBgU19XGhlaYV9XGRst//z//ERhZ2ZXLCxfW1ZWXldpU2RXGk0ZU2dmWhlPGx8wYmRXWFtqGhlTVl9bYBkbHzBZZGFnYhpYZ2BVZlthYBIaGxJt//z//BISEhJEYWdmVywsYmRXWFtqGhlUW2FfV2ZkW1VlGRsfMFlkYWdiGlhnYFVmW2FgEhobEm3//BISEhISEhISRGFnZlcsLFlXZhoZGR4ZNFthX1dmZFtVZU4zYls1YWBmZGFeXldkMltgVldqGRsfMGBTX1caGVRbYV9XZmRbVWUgW2BWV2oZGy3//BISEhISEhISRGFnZlcsLFlXZhoZZlNUXlcZHhk0W2FfV2ZkW1VlTjNiWzVhYGZkYV5eV2QyWVdmNFthX1dmZFtVGRsfMGBTX1caGVRbYV9XZmRbVWUgZlNUXlcZGy3//BISEhJvGy3//BISEhL//BISEhJEYWdmVywsYmRXWFtqGhlTZmZXYFZTYFVXGRsfMFlkYWdiGlhnYFVmW2FgEhobEm3//BISEhISEhISRGFnZlcsLFlXZhoZGR4ZM2ZmV2BWU2BVV04zYls1YWBmZGFeXldkMltgVldqGRsfMGBTX1caGVRbYV9XZmRbVWUgW2BWV2oZGy3//BISEhISEhISRGFnZlcsLFlXZhoZZlNUXlchbVtibxkeGTRbYV9XZmRbVWVOM2ZmV2BWU2BVVzVhYGZkYV5eV2QyW2BWV2oZGx8wYFNfVxoZVFthX1dmZFtVZSBmU1ReVxkbLf/8EhISEm8bLf/8EhISEkRhZ2ZXLCxZV2YaGWZXZWYZHhk0W2FfV2ZkW1VlTkVVWldWZ15XNWFgZmRhXl5XZDJZV2Y0W2FfV2ZkW1UZGx8wYFNfVxoZZldlZhkbLf/8//xvGy3//CEhEmVVWldWZ15XEmZXZWZXZP/8RGFnZlcsLFlXZhoZZldlZhkeGTRbYV9XZmRbVWVORVVaV1ZnXlc1YWBmZGFeXldkMmVXYFYzZmZXYFZTYFVXGRsfMGBTX1caGWZXZWYZGy3//P/8//w=
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+
+    Route::prefix('biometrics')->group(function () {
+        Route::get('','Biometrics\ApiController@index')->name('biometrics.index');
+        Route::get('table','Biometrics\ApiController@getBiometric')->name('biometrics.table');
+    });
+    
+    Route::prefix('attendance')->group(function () {
+        Route::get('','Attendance\ApiController@index')->name('biometrics.index');
+        Route::get('table/{ip}','Biometrics\AttendanceController@index')->name('biometrics.table');
+    });
+    Route::get('test','Biometrics\ScheduleController@getBiometric')->name('test');
+
+});
+// schedule tester
+Route::get('test','Biometrics\ScheduleController@sendAttendance')->name('test');
+

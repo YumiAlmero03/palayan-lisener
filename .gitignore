@@ -1,5 +1,6 @@
 /node_modules
 /public/hot
+/database/seeders/DatabaseSeeder.php
 /public/storage
 /storage/*.key
 /vendor

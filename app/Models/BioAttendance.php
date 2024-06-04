@@ -12,6 +12,6 @@ class BioAttendance extends Model
 
     public function biometric()
     {
-        return $this->hasOne('App\Models\Biometric', 'id', 'obr_id');
+        return $this->hasOne('App\Models\Biometric', 'id', 'biometric_id');
     }
 }

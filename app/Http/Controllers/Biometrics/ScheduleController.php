@@ -19,7 +19,7 @@ class ScheduleController extends Controller
      * @return type
      * @throws conditon
      **/
-    public function getBiometric($url = 'dev')
+    public function getBiometric($url = 'prod')
     {
         // fetch biometrics list and updated from webapp 
         $client = new Client();
@@ -65,7 +65,7 @@ class ScheduleController extends Controller
 
     public function getAttendance()
     {
-        // fetch attendance from device
+        // fetch attendance from prodice
         try {
             $biometrics = Biometric::where('is_active',1)->get();
             foreach ($biometrics as $key => $value) {
@@ -79,7 +79,7 @@ class ScheduleController extends Controller
         }
     }
 
-    public function sendAttendance($url = 'dev')
+    public function sendAttendance($url = 'prod')
     {
         // send attendance to web app
         try {
@@ -104,12 +104,11 @@ class ScheduleController extends Controller
                 // } else {
                 //     sendLogs('Controller->Biometric->sendAttendance',$status,'error','SchedulerLogs');
                 // }
-
                 foreach (serverStage($url) as $server) {
                     $res = $client->request('POST', $server->server_url.'api/biometrics/recieveAttendance',[
                         'form_params' => [
                             'user_id' => $value->bio_uuid,
-                            'bio_ip_add' => $value->biometric->bio_ip,
+                            'bio_ip_add' => ($value->biometric ? $value->biometric->bio_ip : ''),
                             'bio_server' => env('APP_ENV'),
                             'date' => $value->hrba_date,
                             'time' => $value->hrba_time,
@@ -129,7 +128,7 @@ class ScheduleController extends Controller
             sendLogs('Controller->Biometric->sendAttendance','sendAttendance done','info','SchedulerLogs');
             return 'sendAttendance done';
         } catch (\Throwable $th) {
-            sendLogs('Controller->Biometric->sendAttendance','','error','SchedulerLogs');
+            sendLogs('Controller->Biometric->sendAttendance',$th,'error','SchedulerLogs');
             return 'sendAttendance error';
         }
     

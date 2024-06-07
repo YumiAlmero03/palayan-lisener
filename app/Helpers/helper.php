@@ -40,3 +40,11 @@ function sendLogs($loc,$msg,$type = 'info',$file = 'throwLogs'){
 function generateHashApi() {
     return bcrypt(config('constants.password.server-api'));
 }
+
+function getNetwork($ip){
+    $parts = explode('.', $ip);
+    if (count($parts) < 4) {
+        throw new Exception("Invalid IP address");
+    }
+    return $parts[0] . '.' . $parts[1] . '.' . $parts[2];
+}

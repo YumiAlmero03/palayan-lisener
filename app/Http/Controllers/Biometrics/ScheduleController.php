@@ -26,10 +26,11 @@ class ScheduleController extends Controller
             $client = new Client();
             $res = $client->request('GET', getServerUrl($url).'api/biometrics/getBiometrics');
             $biometrics = json_decode($res->getBody()->getContents());
+            $res->getBody()->close();
             $local_server_ip = getHostByName(php_uname('n'));
             foreach ($biometrics as $biometric) {
-                if ($this->getNetwork($local_server_ip) == $this->getNetwork($biometric->bio_ip)) {
-                    Biometric::testBiometric($biometric->bio_ip,$biometric->bio_proxy);
+                if (getNetwork($local_server_ip) == getNetwork($biometric->bio_ip)) {
+                    // Biometric::testBiometric($biometric->bio_ip,$biometric->bio_proxy);
                     $bio = Biometric::updateOrCreate(
                         [
                             'bio_id' => $biometric->id
@@ -52,13 +53,14 @@ class ScheduleController extends Controller
                             'password' => generateHashApi(),
                         ]
                     ]);
+                    sendLogs('Controller->Biometric->getBiometric','getBiometric ip:'.$biometric->bio_ip,'info','SchedulerLogs');
                 }
             }
             sendLogs('Controller->Biometric->getBiometric','getBiometric done','info','SchedulerLogs');
 
             return 'getBiometric done';
         } catch (\Throwable $th) {
-            sendLogs('Controller->Biometric->getBiometric',getServerUrl($url).'api/biometrics/getBiometrics','error','throwLogs');
+            sendLogs('Controller->Biometric->getBiometric',$th,'error','throwLogs');
             return 'getBiometric error';
             //throw $th;
         }
@@ -138,13 +140,5 @@ class ScheduleController extends Controller
     
     }
     
-    public function getNetwork($ip)
-    {
-        $parts = explode('.', $ip);
-        if (count($parts) < 4) {
-            throw new Exception("Invalid IP address");
-        }
-        return $parts[0] . '.' . $parts[1] . '.' . $parts[2];
-    }
 
 }

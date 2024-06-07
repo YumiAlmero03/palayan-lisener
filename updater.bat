@@ -1,5 +1,7 @@
 git restore *.*
-Git pull origin toMain 
-php artisan migrate 
+Git pull origin encrypt-1.0 
+php artisan migrate
 composer install 
+
+php artisan db:seed --class=BiometricsTruncateTableSeeder
 pause

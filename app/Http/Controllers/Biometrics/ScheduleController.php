@@ -128,8 +128,8 @@ class ScheduleController extends Controller
             sendLogs('Controller->Biometric->sendAttendance','sendAttendance done','info','SchedulerLogs');
             return 'sendAttendance done';
         } catch (\Throwable $th) {
-            sendLogs('Controller->Biometric->sendAttendance',$th,'error','SchedulerLogs');
-            return 'sendAttendance error';
+            sendLogs('Controller->Biometric->sendAttendance',$th,'error','throwLogs');
+            return 'sendAttendance error'.$th;
         }
     
     }

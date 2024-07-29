@@ -10,8 +10,8 @@ class BioAttendance extends Model
     protected $guarded = ['id'];
     public $table = 'hr_bio_attendance';
 
-    public function biometric()
-    {
-        return $this->hasOne('App\Models\Biometric', 'id', 'biometric_id');
+    public function biometric() 
+    { 
+        return $this->belongsTo('App\Models\Biometric', 'biometric_id', 'id'); 
     }
 }

@@ -124,9 +124,8 @@ class Biometric extends Model
     public function getAttendance($ip = null)
     {
         try {
-
             $zk = Self::start($ip);
-            $attendance = $zk->getAttendance();
+            $attendance = $zk->getTodaysRecords();
             foreach ($attendance as $key => $value) {
                 $timestamp = Carbon::parse($value['timestamp']);
                 BioAttendance::firstOrCreate(
@@ -143,6 +142,40 @@ class Biometric extends Model
                         'hrba_time' => $timestamp->toTimeString(),
                     ]
                 );
+            }
+            return $attendance;
+        } catch (\Throwable $th) {
+            sendLogs('Models->Biometric->getAttendance',$th,'error');
+            //throw $th;
+        }
+        
+    }
+
+    public function getAttendanceToday($ip = null)
+    {
+        try {
+            $zk = Self::start($ip);
+            $attendance = $zk->getTodaysRecords();
+            dd($attendance);
+            foreach ($attendance as $key => $value) {
+                $timestamp = Carbon::parse($value['timestamp']);
+                if ($timestamp->toDateString() === Carbon::today()->toDateString()) {
+                    BioAttendance::firstOrCreate(
+                        [
+                            'biometric_id' => $this->id,
+                            'bio_uid' => (int)$value['uid'],
+                            'bio_uuid' => (int)$value['id'],
+                            'bio_timestamp' => $value['timestamp'],
+                        ],
+                        [
+                            'bio_state' => $value['state'],
+                            'bio_type' => $value['type'],
+                            'hrba_date' => $timestamp->toDateString(),
+                            'hrba_time' => $timestamp->toTimeString(),
+                        ]
+                    );
+                }
+                
             }
             return $attendance;
         } catch (\Throwable $th) {
@@ -169,5 +202,12 @@ class Biometric extends Model
             ];
         }
         return "error";
+    }
+
+    public function testZteco($ip = null){
+        $zk = new ZKTeco('169.254.94.151');
+        $connected = $zk->connect();
+        $attendanceLog = $zk->getTodaysRecords('2022-05-01');
+        dd($attendanceLog);
     }
 }

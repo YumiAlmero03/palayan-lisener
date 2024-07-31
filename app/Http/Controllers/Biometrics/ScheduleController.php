@@ -72,12 +72,13 @@ class ScheduleController extends Controller
 
     public static function getAttendance()
     {
-        // fetch attendance from prodice
+        // fetch attendance from biometric devices
         try {
             $bio = new Biometric();
+            // dd($bio->testZteco());
             $biometrics = $bio->where('is_active',1)->get();
             foreach ($biometrics as $key => $value) {
-                $value->getAttendance();
+                $value->getAttendanceToday();
             }
             sendLogs('Controller->Biometric->getAttendance','getAttendance done','info','SchedulerLogs');
             return 'getAttendance done';
@@ -109,7 +110,6 @@ class ScheduleController extends Controller
                 ]);
                 $status = $res->getBody()->getContents();
                 $apiMsg = json_decode($status);
-                dd($status, $value);
                 if ($apiMsg->status === 200) {
                     $value->update(['hrba_copy'=>1]);
                 } else {

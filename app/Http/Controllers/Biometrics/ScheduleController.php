@@ -35,7 +35,7 @@ class ScheduleController extends Controller
                     $bio->testBiometric($biometric->bio_ip,$biometric->bio_proxy);
                     $bio = $bio->updateOrCreate(
                         [
-                            'bio_server' => $server->id,
+                            'bio_server' => $server->server_name,
                             'bio_id' => $biometric->id
                         ],
                         [

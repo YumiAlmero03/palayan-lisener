@@ -19,20 +19,23 @@ class ScheduleController extends Controller
      * @return type
      * @throws conditon
      **/
-    public function getBiometric($url = 'dev')
+    public static function getBiometric($url = 'prod')
     {
         // fetch biometrics list and updated from webapp 
         try {
             $client = new Client();
-            $res = $client->request('GET', getServerUrl($url).'api/biometrics/getBiometrics');
+            $server = getServerUrl($url);
+            $res = $client->request('GET', $server->server_url.'api/biometrics/getBiometrics');
             $biometrics = json_decode($res->getBody()->getContents());
             $res->getBody()->close();
             $local_server_ip = getHostByName(php_uname('n'));
             foreach ($biometrics as $biometric) {
                 if (getNetwork($local_server_ip) == getNetwork($biometric->bio_ip)) {
-                    // Biometric::testBiometric($biometric->bio_ip,$biometric->bio_proxy);
-                    $bio = Biometric::updateOrCreate(
+                    $bio = new Biometric();
+                    $bio->testBiometric($biometric->bio_ip,$biometric->bio_proxy);
+                    $bio = $bio->updateOrCreate(
                         [
+                            'bio_server' => $server->id,
                             'bio_id' => $biometric->id
                         ],
                         [
@@ -42,12 +45,11 @@ class ScheduleController extends Controller
                             'bio_model' => $biometric->bio_model,
                             'bio_code' => $biometric->bio_code,
                             'bio_department' => $biometric->bio_department,
-                            'bio_server' => $url,
                             'is_active' => $biometric->is_active,
                         ]
                     );
                     
-                    $confirm = $client->request('POST', getServerUrl($url).'api/biometrics/confirmBiometric',[
+                    $confirm = $client->request('POST', $server->server_url.'api/biometrics/confirmBiometric',[
                         'form_params' => [
                             'id' => $biometric->id,
                             'password' => generateHashApi(),
@@ -64,13 +66,16 @@ class ScheduleController extends Controller
             return 'getBiometric error';
             //throw $th;
         }
+        return 'getBiometric done';
+        
     }
 
-    public function getAttendance()
+    public static function getAttendance()
     {
-        // fetch attendance from device
+        // fetch attendance from prodice
         try {
-            $biometrics = Biometric::where('is_active',1)->get();
+            $bio = new Biometric();
+            $biometrics = $bio->where('is_active',1)->get();
             foreach ($biometrics as $key => $value) {
                 $value->getAttendance();
             }
@@ -82,55 +87,54 @@ class ScheduleController extends Controller
         }
     }
 
-    public function sendAttendance($url = 'dev')
+    public static function sendAttendance($url = 'prod')
     {
         // send attendance to web app
         try {
             $attendace = BioAttendance::where('hrba_copy',0)->get();
             foreach ($attendace as $value) {
                 $pass = generateHashApi();
-                // $client = new Client();
-                // $res = $client->request('POST', getServerUrl($url).'api/biometrics/recieveAttendance',[
-                //     'form_params' => [
-                //         'user_id' => $value->bio_uuid,
-                //         'bio_ip_add' => ($value->biometric ? $value->biometric->bio_ip : ''),
-                //         'bio_server' => env('APP_ENV'),
-                //         'date' => $value->hrba_date,
-                //         'time' => $value->hrba_time,
-                //         'password' => generateHashApi(),
-                //     ]
-                // ]);
-                // $status = $res->getBody()->getContents();
-                // $apiMsg = json_decode($status);
-                // if ($apiMsg->status === 200) {
-                //     $value->update(['hrba_copy'=>1]);
-                // } else {
-                //     sendLogs('Controller->Biometric->sendAttendance',$status,'error','SchedulerLogs');
-                // }
-
-                // dd(serverStage($url));
-                foreach (serverStage($url) as $server) {
-                    $client = new Client();
-                    $res = $client->request('POST', $server.'api/biometrics/recieveAttendance',[
-                        'form_params' => [
-                            'user_id' => $value->bio_uuid,
-                            'bio_ip_add' => ($value->biometric ? $value->biometric->bio_ip : ''),
-                            'bio_server' => env('APP_ENV'),
-                            'date' => $value->hrba_date,
-                            'time' => $value->hrba_time,
-                            'password' => generateHashApi(),
-                        ]
-                    ]);
-                    $status = $res->getBody()->getContents();
-                    $apiMsg = json_decode($status);
-                    if ($apiMsg->status === 200) {
-                        $value->update(['hrba_copy'=>1]);
-                    } else {
-                        sendLogs('Controller->Biometric->sendAttendance',$status,'info','SchedulerLogs');
-                    }
+                $client = new Client();
+                
+                $res = $client->request('POST', getServerUrl($url)->server_url.'/api/biometrics/recieveAttendance',[
+                    'form_params' => [
+                        'user_id' => $value->bio_uuid,
+                        'date' => $value->hrba_date,
+                        'time' => $value->hrba_time,
+                        'bio_ip_add' => ($value->biometric ? $value->biometric->bio_ip : ''),
+                        'bio_server' => env('APP_ENV'),
+                        'biometric_id' => $value->hrba_time,
+                        'password' => generateHashApi(),
+                    ]
+                ]);
+                $status = $res->getBody()->getContents();
+                $apiMsg = json_decode($status);
+                dd($status, $value);
+                if ($apiMsg->status === 200) {
+                    $value->update(['hrba_copy'=>1]);
+                } else {
+                    sendLogs('Controller->Biometric->sendAttendance',$status,'error','SchedulerLogs');
                 }
+                // foreach (serverStage($url) as $server) {
+                //     $res = $client->request('POST', $server->server_url.'api/biometrics/recieveAttendance',[
+                //         'form_params' => [
+                //             'user_id' => $value->bio_uuid,
+                //             'bio_ip_add' => ($value->biometric ? $value->biometric->bio_ip : ''),
+                //             'bio_server' => env('APP_ENV'),
+                //             'date' => $value->hrba_date,
+                //             'time' => $value->hrba_time,
+                //             'password' => generateHashApi(),
+                //         ]
+                //     ]);
+                //     $status = $res->getBody()->getContents();
+                //     $apiMsg = json_decode($status);
+                //     if ($apiMsg->status === 200) {
+                //         $value->update(['hrba_copy'=>1]);
+                //     } else {
+                //         sendLogs('Controller->Biometric->sendAttendance server:'.$server->server_name,$status,'error','SchedulerLogs');
+                //     }
+                // }
             }
-
             sendLogs('Controller->Biometric->sendAttendance','sendAttendance done','info','SchedulerLogs');
             return 'sendAttendance done';
         } catch (\Throwable $th) {

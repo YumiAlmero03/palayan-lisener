@@ -46,7 +46,8 @@ class ConnectOneBiometric extends Command
             $process = new Process(['ping',$ping]);
             $process->run();
             $output = $process->getOutput();
-            Biometric::testBiometric($ping);
+            $bio = new Biometric();
+            $bio->testBiometric($ping);
             $this->info($ping . ' can connect');
         } catch (\Throwable $th) {
             $this->info($ping . ' cannot connect');

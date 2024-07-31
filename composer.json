@@ -9,13 +9,14 @@
         "doctrine/dbal": "^3.8",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.7",
+        "jmrashed/zkteco": "^1.0",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "rats/zkteco": "^002.0",
-        "symfony/process": "^5.4",
-        "sbamtr/laravel-source-encrypter": "^1.5"
+        "sbamtr/laravel-source-encrypter": "^1.5",
+        "symfony/process": "^5.4"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

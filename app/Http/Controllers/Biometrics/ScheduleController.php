@@ -88,16 +88,15 @@ class ScheduleController extends Controller
         }
     }
 
-    public static function sendAttendance($url = 'prod')
+    public static function sendAttendance($url = 'dev')
     {
         // send attendance to web app
         try {
-            $attendace = BioAttendance::where('hrba_copy',0)->get();
+            $attendace = BioAttendance::where('hrba_copy',0)->limit(100)->get();
             foreach ($attendace as $value) {
                 $pass = generateHashApi();
                 $client = new Client();
-                
-                $res = $client->request('POST', getServerUrl($url)->server_url.'/api/biometrics/recieveAttendance',[
+                $res = $client->request('POST', getServerUrl($url)->server_url.'api/biometrics/recieveAttendance',[
                     'form_params' => [
                         'user_id' => $value->bio_uuid,
                         'date' => $value->hrba_date,
@@ -139,7 +138,7 @@ class ScheduleController extends Controller
             return 'sendAttendance done';
         } catch (\Throwable $th) {
             sendLogs('Controller->Biometric->sendAttendance',$th,'error','throwLogs');
-            return 'sendAttendance error';
+            return 'sendAttendance error'.$th;
         }
     
     }

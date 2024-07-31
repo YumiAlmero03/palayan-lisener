@@ -125,7 +125,7 @@ class Biometric extends Model
     {
         try {
             $zk = Self::start($ip);
-            $attendance = $zk->getTodaysRecords();
+            $attendance = $zk->getAttendance();
             foreach ($attendance as $key => $value) {
                 $timestamp = Carbon::parse($value['timestamp']);
                 BioAttendance::firstOrCreate(
@@ -155,8 +155,7 @@ class Biometric extends Model
     {
         try {
             $zk = Self::start($ip);
-            $attendance = $zk->getTodaysRecords();
-            dd($attendance);
+            $attendance = $zk->getAttendance();
             foreach ($attendance as $key => $value) {
                 $timestamp = Carbon::parse($value['timestamp']);
                 if ($timestamp->toDateString() === Carbon::today()->toDateString()) {

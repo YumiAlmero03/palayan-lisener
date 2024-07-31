@@ -44,7 +44,8 @@ class ConnectBioUser extends Command
             $process = new Process(['ping',$ping]);
             $process->run();
             $output = $process->getOutput();
-            dd(Biometric::listUser($ping));
+            $bio = new Biometric();
+            dd($bio->listUser($ping));
         } catch (\Throwable $th) {
             $this->info($ping . ' cannot connect');
             $this->info($th);

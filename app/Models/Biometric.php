@@ -156,6 +156,7 @@ class Biometric extends Model
         try {
             $zk = Self::start($ip);
             $attendance = $zk->getAttendance();
+            arsort($attendance);
             foreach ($attendance as $key => $value) {
                 $timestamp = Carbon::parse($value['timestamp']);
                 if ($timestamp->toDateString() === Carbon::today()->toDateString()) {
@@ -173,6 +174,8 @@ class Biometric extends Model
                             'hrba_time' => $timestamp->toTimeString(),
                         ]
                     );
+                } else {
+                    break;
                 }
                 
             }

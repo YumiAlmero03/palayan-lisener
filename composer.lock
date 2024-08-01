@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b15e8a8381a97208d2e97c44de730ed6",
+    "content-hash": "29d167523aec59f19d7961d2136e0131",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1373,50 +1373,6 @@
                 }
             ],
             "time": "2023-12-03T20:05:35+00:00"
-        },
-        {
-            "name": "jmrashed/zkteco",
-            "version": "1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jmrashed/zkteco.git",
-                "reference": "685fb696be266ec9cc7ed9c71c51998488d2aa66"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jmrashed/zkteco/zipball/685fb696be266ec9cc7ed9c71c51998488d2aa66",
-                "reference": "685fb696be266ec9cc7ed9c71c51998488d2aa66",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "orchestra/testbench": "^6.0",
-                "phpunit/phpunit": "^10.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Jmrashed\\Zkteco\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Md Rasheduzzaman",
-                    "email": "jmrashed@gmail.com"
-                }
-            ],
-            "description": "ZKTeco Package For Laravel. This package provides seamless integration with ZKTeco devices within Laravel applications, enabling communication with attendance devices such as fingerprint, face recognition, or RFID using UDP protocol.",
-            "support": {
-                "issues": "https://github.com/jmrashed/zkteco/issues",
-                "source": "https://github.com/jmrashed/zkteco/tree/1.0.4"
-            },
-            "time": "2024-05-23T03:59:39+00:00"
         },
         {
             "name": "laravel/framework",

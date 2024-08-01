@@ -70,6 +70,15 @@ class ScheduleController extends Controller
         
     }
 
+    /**
+     * Fetches attendance from biometric devices.
+     *
+     * This function retrieves all active biometrics from the database and calls the `getAttendanceToday` method
+     * on each of them. It then logs the success or failure of the attendance retrieval.
+     *
+     * @throws \Throwable If an error occurs during the attendance retrieval process.
+     * @return string Returns 'getAttendance done' on success, 'getAttendance error' on failure.
+     */
     public static function getAttendance()
     {
         // fetch attendance from biometric devices
@@ -84,7 +93,7 @@ class ScheduleController extends Controller
             return 'getAttendance done';
         } catch (\Throwable $th) {
             sendLogs('Controller->Biometric->getAttendance',$th,'error','throwLogs');
-            return 'getAttendance error';
+            return 'getAttendance error'.$th;
         }
     }
 

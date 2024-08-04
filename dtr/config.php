@@ -14,8 +14,8 @@ $sleep = 1;
 /*define('DTR_URL', 'http://sjsp-sams.edu/get-dtr');*/
 
 
-define('SMS_URL', 'http://127.0.0.1:8000/api/received-attendance');
-define('DTR_URL', 'http://127.0.0.1:8000/api/last-attendance');
+define('SMS_URL', 'http://127.0.0.1:8001/api/received-attendance');
+define('DTR_URL', 'http://127.0.0.1:8001/api/last-attendance');
 
 define('LOCAL_URL', 'http://127.0.0.1:8000/api/received-attendance');
 

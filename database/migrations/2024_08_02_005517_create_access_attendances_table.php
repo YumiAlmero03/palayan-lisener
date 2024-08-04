@@ -22,6 +22,7 @@ class CreateAccessAttendancesTable extends Migration
             $table->string('chk_datetime')->nullable();
             $table->string('bio_ip')->nullable();
             $table->string('type')->nullable();
+            $table->string('is_copy')->default(0);
         });
     }
 

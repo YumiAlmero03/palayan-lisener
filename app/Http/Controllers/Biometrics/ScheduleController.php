@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Biometric;
 use App\Models\BioAttendance;
+use App\Models\AccessAttendance;
 use GuzzleHttp\Client;
 
 class ScheduleController extends Controller
@@ -126,7 +127,7 @@ class ScheduleController extends Controller
                         'time' => $value->hrba_time,
                         'bio_ip_add' => ($value->biometric ? $value->biometric->bio_ip : ''),
                         'bio_server' => env('APP_ENV'),
-                        'biometric_id' => $value->hrba_time,
+                        // 'biometric_id' => ($value->biometric ? $value->biometric->bio_id : ''),
                         'password' => generateHashApi(),
                     ]
                 ]);
@@ -157,6 +158,31 @@ class ScheduleController extends Controller
                 //     }
                 // }
             }
+            $attendace = AccessAttendance::where('is_copy',0)->limit(100)->get();
+            // dd($attendace);
+            foreach ($attendace as $value) {
+                $pass = generateHashApi();
+                $client = new Client();
+                $res = $client->request('POST', getServerUrl($url)->server_url.'api/biometrics/recieveAttendance',[
+                    'form_params' => [
+                        'user_id' => $value->userid,
+                        'date' => $value->chk_date,
+                        'time' => $value->chk_time,
+                        'bio_ip_add' => ($value->biometric ? $value->biometric->bio_ip : ''),
+                        'bio_server' => env('APP_ENV'),
+                        // 'biometric_id' => ($value->biometric ? $value->biometric->bio_id : ''),
+                        'password' => generateHashApi(),
+                    ]
+                ]);
+                $status = $res->getBody()->getContents();
+                $apiMsg = json_decode($status);
+                if ($apiMsg->status === 200) {
+                    $value->update(['is_copy'=>1]);
+                } else {
+                    sendLogs('Controller->Biometric->sendAttendance',$status,'error','SchedulerLogs');
+                }
+            }
+            
             sendLogs('Controller->Biometric->sendAttendance','sendAttendance done','info','SchedulerLogs');
             return 'sendAttendance done';
         } catch (\Throwable $th) {

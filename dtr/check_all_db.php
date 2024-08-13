@@ -28,9 +28,14 @@ class DTRProcessor {
 
     public function start() {
         echo "Started....\n";
+        $i = 1;
         while (true) {
             try {
                 $this->process();
+                if ($i === 2) {
+                    break;
+                }
+                $i++;
             } catch (Exception $e) {
                 echo "Error: " . $e->getMessage() . "\n";
                 $this->logger->error($e->getMessage());
@@ -41,13 +46,16 @@ class DTRProcessor {
     }
 
     private function process() {
+        echo "1";
         if (!$this->checkDatabaseConnection()) return;
-        if (!$this->checkInternetConnection()) return;
+        echo "2";
+        // if (!$this->checkInternetConnection()) return;
+        echo "3";
 
-        if ($this->got_disconnected) {
-            $this->fetchInitialConfiguration();
-            $this->got_disconnected = false;
-        }
+        // if ($this->got_disconnected) {
+        //     $this->fetchInitialConfiguration();
+        //     $this->got_disconnected = false;
+        // }
 
         $this->fetchAndProcessRecords();
         $this->updateConfigurationIfDateChanged();
@@ -85,7 +93,7 @@ class DTRProcessor {
 
     private function fetchAndProcessRecords() {
         echo "Fetching New Record.... \n";
-        $res = $this->dbh->get_user_logs($this->date, $this->time);
+        $res = $this->dbh->get_all_logs($this->date, $this->time);
         echo "RECORD COUNT... " . count($res) . " \n";
         $counter = 0;
 

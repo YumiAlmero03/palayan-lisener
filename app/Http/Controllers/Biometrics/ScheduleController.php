@@ -116,48 +116,48 @@ class ScheduleController extends Controller
     {
         // send attendance to web app
         try {
-            $attendace = BioAttendance::where('hrba_copy',0)->limit(100)->get();
-            foreach ($attendace as $value) {
-                $pass = generateHashApi();
-                $client = new Client();
-                $res = $client->request('POST', getServerUrl($url)->server_url.'api/biometrics/recieveAttendance',[
-                    'form_params' => [
-                        'user_id' => $value->bio_uuid,
-                        'date' => $value->hrba_date,
-                        'time' => $value->hrba_time,
-                        'bio_ip_add' => ($value->biometric ? $value->biometric->bio_ip : ''),
-                        'bio_server' => env('APP_ENV'),
-                        // 'biometric_id' => ($value->biometric ? $value->biometric->bio_id : ''),
-                        'password' => generateHashApi(),
-                    ]
-                ]);
-                $status = $res->getBody()->getContents();
-                $apiMsg = json_decode($status);
-                if ($apiMsg->status === 200) {
-                    $value->update(['hrba_copy'=>1]);
-                } else {
-                    sendLogs('Controller->Biometric->sendAttendance',$status,'error','SchedulerLogs');
-                }
-                // foreach (serverStage($url) as $server) {
-                //     $res = $client->request('POST', $server->server_url.'api/biometrics/recieveAttendance',[
-                //         'form_params' => [
-                //             'user_id' => $value->bio_uuid,
-                //             'bio_ip_add' => ($value->biometric ? $value->biometric->bio_ip : ''),
-                //             'bio_server' => env('APP_ENV'),
-                //             'date' => $value->hrba_date,
-                //             'time' => $value->hrba_time,
-                //             'password' => generateHashApi(),
-                //         ]
-                //     ]);
-                //     $status = $res->getBody()->getContents();
-                //     $apiMsg = json_decode($status);
-                //     if ($apiMsg->status === 200) {
-                //         $value->update(['hrba_copy'=>1]);
-                //     } else {
-                //         sendLogs('Controller->Biometric->sendAttendance server:'.$server->server_name,$status,'error','SchedulerLogs');
-                //     }
-                // }
-            }
+            // $attendace = BioAttendance::where('hrba_copy',0)->limit(100)->get();
+            // foreach ($attendace as $value) {
+            //     $pass = generateHashApi();
+            //     $client = new Client();
+            //     $res = $client->request('POST', getServerUrl($url)->server_url.'api/biometrics/recieveAttendance',[
+            //         'form_params' => [
+            //             'user_id' => $value->bio_uuid,
+            //             'date' => $value->hrba_date,
+            //             'time' => $value->hrba_time,
+            //             'bio_ip_add' => ($value->biometric ? $value->biometric->bio_ip : ''),
+            //             'bio_server' => env('APP_ENV'),
+            //             // 'biometric_id' => ($value->biometric ? $value->biometric->bio_id : ''),
+            //             'password' => generateHashApi(),
+            //         ]
+            //     ]);
+            //     $status = $res->getBody()->getContents();
+            //     $apiMsg = json_decode($status);
+            //     if ($apiMsg->status === 200) {
+            //         $value->update(['hrba_copy'=>1]);
+            //     } else {
+            //         sendLogs('Controller->Biometric->sendAttendance',$status,'error','SchedulerLogs');
+            //     }
+            //     // foreach (serverStage($url) as $server) {
+            //     //     $res = $client->request('POST', $server->server_url.'api/biometrics/recieveAttendance',[
+            //     //         'form_params' => [
+            //     //             'user_id' => $value->bio_uuid,
+            //     //             'bio_ip_add' => ($value->biometric ? $value->biometric->bio_ip : ''),
+            //     //             'bio_server' => env('APP_ENV'),
+            //     //             'date' => $value->hrba_date,
+            //     //             'time' => $value->hrba_time,
+            //     //             'password' => generateHashApi(),
+            //     //         ]
+            //     //     ]);
+            //     //     $status = $res->getBody()->getContents();
+            //     //     $apiMsg = json_decode($status);
+            //     //     if ($apiMsg->status === 200) {
+            //     //         $value->update(['hrba_copy'=>1]);
+            //     //     } else {
+            //     //         sendLogs('Controller->Biometric->sendAttendance server:'.$server->server_name,$status,'error','SchedulerLogs');
+            //     //     }
+            //     // }
+            // }
             $attendace = AccessAttendance::where('is_copy',0)->limit(100)->get();
             // dd($attendace);
             foreach ($attendace as $value) {

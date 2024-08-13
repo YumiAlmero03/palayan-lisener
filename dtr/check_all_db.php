@@ -46,16 +46,13 @@ class DTRProcessor {
     }
 
     private function process() {
-        echo "1";
         if (!$this->checkDatabaseConnection()) return;
-        echo "2";
-        // if (!$this->checkInternetConnection()) return;
-        echo "3";
+        if (!$this->checkInternetConnection()) return;
 
-        // if ($this->got_disconnected) {
-        //     $this->fetchInitialConfiguration();
-        //     $this->got_disconnected = false;
-        // }
+        if ($this->got_disconnected) {
+            $this->fetchInitialConfiguration();
+            $this->got_disconnected = false;
+        }
 
         $this->fetchAndProcessRecords();
         $this->updateConfigurationIfDateChanged();

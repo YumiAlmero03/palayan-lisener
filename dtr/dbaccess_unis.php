@@ -105,7 +105,7 @@ class DBAccess
         $date = ($date) ? $date : date("Ymd");
         $time = ($time) ? $time : "040000";
 		echo 'DATE: '.date('m/d/Y', strtotime($date)).'  \n\r';
-		$sql="SELECT tK.USERID AS userX,
+		$sql="SELECT emp.Name AS userX,
             FORMAT(tk.CHECKTIME, 'YYYY-MM-DD') AS DateX,
             FORMAT(tk.CHECKTIME, 'HH:MM:SS') AS TimeX,
             FORMAT(tk.CHECKTIME, 'YYYY-MM-DD HH:MM:SS') AS datetimeX,
@@ -113,8 +113,9 @@ class DBAccess
             tk.CHECKTIME AS checkdatetime,
             tK.SENSORID AS bio_id,
             MC.IP AS bio_ip
-			FROM CHECKINOUT AS tK 
-                LEFT JOIN Machines AS MC ON MC.MachineNumber = tK.SENSORID
+			FROM (CHECKINOUT AS tK 
+                LEFT JOIN Machines AS MC ON MC.MachineNumber = tK.SENSORID) 
+                LEFT JOIN USERINFO AS emp ON emp.USERID = tK.USERID
 			WHERE tK.is_copy = 0 
 			AND tk.CHECKTIME LIKE '%".date('n/j/Y', strtotime($date))."%';";
         return $this->select_all($sql);
@@ -127,7 +128,7 @@ class DBAccess
         $sql2 = "UPDATE CHECKINOUT as tE SET tE.is_copy = 0";
         $res = odbc_exec($this->conn,$sql2);
 		$sql="
-            SELECT tK.USERID AS userX,
+            SELECT emp.Name AS userX,
             FORMAT(tk.CHECKTIME, 'YYYY-MM-DD') AS DateX,
             FORMAT(tk.CHECKTIME, 'HH:MM:SS') AS TimeX,
             FORMAT(tk.CHECKTIME, 'YYYY-MM-DD HH:MM:SS') AS datetimeX,
@@ -135,8 +136,9 @@ class DBAccess
             tk.CHECKTIME AS checkdatetime,
             tK.SENSORID AS bio_id,
             MC.IP AS bio_ip
-			FROM CHECKINOUT AS tK 
-                LEFT JOIN Machines AS MC ON MC.MachineNumber = tK.SENSORID
+			FROM (CHECKINOUT AS tK 
+                LEFT JOIN Machines AS MC ON MC.MachineNumber = tK.SENSORID)
+                LEFT JOIN USERINFO AS emp ON emp.USERID = tK.USERID
 			WHERE tK.is_copy = 0 ";
         return $this->select_all($sql);
     }

@@ -105,7 +105,7 @@ class DBAccess
         $date = ($date) ? $date : date("Ymd");
         $time = ($time) ? $time : "040000";
 		echo 'DATE: '.date('m/d/Y', strtotime($date)).'  \n\r';
-		$sql="SELECT emp.Name AS userX,
+		$sql="SELECT emp.Badgenumber AS userX,
             FORMAT(tk.CHECKTIME, 'YYYY-MM-DD') AS DateX,
             FORMAT(tk.CHECKTIME, 'HH:MM:SS') AS TimeX,
             FORMAT(tk.CHECKTIME, 'YYYY-MM-DD HH:MM:SS') AS datetimeX,
@@ -128,7 +128,7 @@ class DBAccess
         $sql2 = "UPDATE CHECKINOUT as tE SET tE.is_copy = 0";
         $res = odbc_exec($this->conn,$sql2);
 		$sql="
-            SELECT emp.Name AS userX,
+            SELECT emp.Badgenumber AS userX,
             FORMAT(tk.CHECKTIME, 'YYYY-MM-DD') AS DateX,
             FORMAT(tk.CHECKTIME, 'HH:MM:SS') AS TimeX,
             FORMAT(tk.CHECKTIME, 'YYYY-MM-DD HH:MM:SS') AS datetimeX,

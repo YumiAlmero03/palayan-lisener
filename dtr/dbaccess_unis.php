@@ -117,7 +117,8 @@ class DBAccess
                 LEFT JOIN Machines AS MC ON MC.MachineNumber = tK.SENSORID) 
                 LEFT JOIN USERINFO AS emp ON emp.USERID = tK.USERID
 			WHERE tK.is_copy = 0 
-			AND tk.CHECKTIME LIKE '%".date('n/j/Y', strtotime($date))."%';";
+			;";
+			// -- AND tk.CHECKTIME LIKE '%".date('n/j/Y', strtotime($date))."%';";
         return $this->select_all($sql);
     }
 

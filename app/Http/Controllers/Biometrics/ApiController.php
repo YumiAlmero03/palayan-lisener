@@ -30,15 +30,16 @@ class ApiController extends Controller
     public function recieveAttendance(Request $request)
     {
         try {
-            $record = AccessAttendance::create(
+            $record = AccessAttendance::firstOrCreate(
                 [
                     'userid' => $request->userid,
                     'chk_date' => $request->e_date,
                     'chk_time' => $request->e_time,
-                    'chk_datetime' => $request->datetime,
                     'bio_ip' => $request->bio_ip,
+                    'chk_datetime' => $request->datetime,
+                ],
+                [
                     'type' => $request->type,
-                    // 'created_at' => \Carbon\Carbon::now(),
                 ]
             );
             
@@ -48,7 +49,6 @@ class ApiController extends Controller
                 'msg' => 'Attendance Sent!'
             ]);
         } catch (\Throwable $th) {
-            dd($th);
             return json_encode([
                 'status' => 500,
                 'type' => 'error',

@@ -48,9 +48,11 @@ class ConnectBiometrics extends Command
                 $process->run();
                 $output = $process->getOutput();
                 $value->testBiometric();
+                $value->update(['is_connected' => 1]);
                 $this->info($value->bio_ip . ' is connected');
             } catch (\Throwable $th) {
                 $this->info($value->bio_ip . ' is not connected');
+                $value->update(['is_connected' => 0]);
                 $this->info($th);
             }
             

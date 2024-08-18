@@ -29,6 +29,7 @@ class ScheduleController extends Controller
             $biometrics = json_decode($res->getBody()->getContents());
             $res->getBody()->close();
             $local_server_ip = getHostByName(php_uname('n'));
+            // dd($local_server_ip);
             foreach ($biometrics as $biometric) {
                 if (getNetwork($local_server_ip) == getNetwork($biometric->bio_ip)) {
                     $bio = new Biometric();
@@ -71,9 +72,36 @@ class ScheduleController extends Controller
     }
 
     /**
-     * Fetches attendance from biometric devices.
+     * Fetches attendance for today from biometric devices.
      *
      * This function retrieves today's attendance from the active biometrics and calls the `getAttendanceToday` method
+     * on each of them. It then logs the success or failure of the attendance retrieval.
+     *
+     * @throws \Throwable If an error occurs during the attendance retrieval process.
+     * @return string Returns 'getAttendance done' on success, 'getAttendance error' on failure.
+     */
+    public static function getAttendanceToday()
+    {
+        // fetch attendance from biometric devices
+        try {
+            $bio = new Biometric();
+            // dd($bio->testZteco());
+            $biometrics = $bio->where('is_active',1)->get();
+            foreach ($biometrics as $key => $value) {
+                $value->getAttendanceToday();
+            }
+            sendLogs('Controller->Biometric->getAttendance','getAttendance done','info','SchedulerLogs');
+            return 'getAttendance done';
+        } catch (\Throwable $th) {
+            sendLogs('Controller->Biometric->getAttendance',$th,'error','throwLogs');
+            return 'getAttendance error'.$th;
+        }
+    }
+
+    /**
+     * Fetches attendance for today from biometric devices.
+     *
+     * This function retrieves today's attendance from the active biometrics and calls the `getAttendance` method
      * on each of them. It then logs the success or failure of the attendance retrieval.
      *
      * @throws \Throwable If an error occurs during the attendance retrieval process.
@@ -87,7 +115,7 @@ class ScheduleController extends Controller
             // dd($bio->testZteco());
             $biometrics = $bio->where('is_active',1)->get();
             foreach ($biometrics as $key => $value) {
-                $value->getAttendanceToday();
+                $value->getAttendance();
             }
             sendLogs('Controller->Biometric->getAttendance','getAttendance done','info','SchedulerLogs');
             return 'getAttendance done';

@@ -6,22 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Biometrics;
 use GuzzleHttp\Client;
-
+use Carbon\Carbon;
 class ApiController extends Controller
 {
-    /**
-     * Send to Server
-     *
-     * Undocumented function long description
-     *
-     * @param Type $var Description
-     * @return type
-     * @throws conditon
-     **/
-    public function attendanceSendToServer($request)
-    {
-        
-    }
     
     /**
      * Test Connection to Biometric

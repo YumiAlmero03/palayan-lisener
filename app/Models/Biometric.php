@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
-use Jmrashed\Zkteco\Lib\ZKTeco;
+use Rats\Zkteco\Lib\ZKTeco;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 
@@ -124,7 +124,6 @@ class Biometric extends Model
     public function getAttendance($ip = null)
     {
         try {
-
             $zk = Self::start($ip);
             $attendance = $zk->getAttendance();
             foreach ($attendance as $key => $value) {
@@ -152,6 +151,42 @@ class Biometric extends Model
         
     }
 
+    public function getAttendanceToday($ip = null)
+    {
+        try {
+            $zk = Self::start($ip);
+            $attendance = $zk->getAttendance();
+            arsort($attendance);
+            foreach ($attendance as $key => $value) {
+                $timestamp = Carbon::parse($value['timestamp']);
+                if ($timestamp->toDateString() === Carbon::today()->toDateString()) {
+                    BioAttendance::firstOrCreate(
+                        [
+                            'biometric_id' => $this->id,
+                            'bio_uid' => (int)$value['uid'],
+                            'bio_uuid' => (int)$value['id'],
+                            'bio_timestamp' => $value['timestamp'],
+                        ],
+                        [
+                            'bio_state' => $value['state'],
+                            'bio_type' => $value['type'],
+                            'hrba_date' => $timestamp->toDateString(),
+                            'hrba_time' => $timestamp->toTimeString(),
+                        ]
+                    );
+                } else {
+                    break;
+                }
+                
+            }
+            return $attendance;
+        } catch (\Throwable $th) {
+            sendLogs('Models->Biometric->getAttendance',$th,'error');
+            //throw $th;
+        }
+        
+    }
+
     public function testBiometric($ip = null,$proxy = 4370)
     {
         if ($ip == null) {
@@ -169,5 +204,12 @@ class Biometric extends Model
             ];
         }
         return "error";
+    }
+
+    public function testZteco($ip = null){
+        $zk = new ZKTeco('169.254.94.151');
+        $connected = $zk->connect();
+        $attendanceLog = $zk->getTodaysRecords('2022-05-01');
+        dd($attendanceLog);
     }
 }
